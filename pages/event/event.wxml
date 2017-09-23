@@ -13,16 +13,12 @@
   </view>
 
   <view class="button-holder">
-    <button>Register</button>
+    <button bindtap="handleRegisterBtn">Register</button>
   </view>
 
   <view>
-  <text>Info</text>
+  <text>Photos</text>
+  
   </view>
-
-
-
-
-
-
+  
 </view>

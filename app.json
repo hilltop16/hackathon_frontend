@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/event/event",
     "pages/events/events",
+    "pages/event/event",
     "pages/profile/profile"
   ],
   "window":{

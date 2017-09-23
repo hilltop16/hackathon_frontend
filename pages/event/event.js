@@ -1,7 +1,8 @@
 var app = getApp();
 Page({
   data: {    
-    id: 8,
+    eventId: 8,
+    openId: null,
     location_id: 1,
     workout_type: "swimming",
     is_cancelled: false,
@@ -21,12 +22,41 @@ Page({
     name: "Jingan Park"
   },
   onLoad: function() {
+    var that = this;
+    wx.login({
+      success: function (res) {
+        var appid = 'wxf9b7a30621259c74';
+        var secret = '5697234e6d25de673a035bcb6e0d611b';
+        wx.request({
+          url: "https://api.weixin.qq.com/sns/jscode2session?appid=" + appid + "&secret=" + secret + "&grant_type=authorization_code&js_code=" + res.code,
+          success: function (res) {
+            that.setData({
+              openid: res.data.openid
+            })
+            console.log(that.data.openid)
+          }
+        })
+      }
+    })
   },
   onShow: function() {
   },
   navProfile: function() {
     wx.navigateTo({
       url: '/pages/events/events'
+    })
+  },
+  handleRegisterBtn: function() {
+    wx.request({
+      url: "https://fitfam-backend.herokuapp.com/events/",
+      method: 'GET',
+      data: {
+        id: this.data.eventId,
+        user_id: this.data.openId,
+      },
+      success: function (res) {
+        console.log(res)
+      }
     })
   }
 })
