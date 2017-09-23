@@ -18,9 +18,23 @@ Page({
     members: [{"photo": "http://wx.qlogo.cn/mmopen/vi_32/Nhr2By0AKpvy5YtD8x0Qy63SdnfGOluyCbqiapqhDBICJXaG3CwsiaCK5EbPmDTFapANkljPp1T2xicBCnGJCS9bw/0", "id": 1}, {"photo": "http://wx.qlogo.cn/mmopen/vi_32/Nhr2By0AKpvy5YtD8x0Qy63SdnfGOluyCbqiapqhDBICJXaG3CwsiaCK5EbPmDTFapANkljPp1T2xicBCnGJCS9bw/0", "id": 2}, {"photo": "http://wx.qlogo.cn/mmopen/vi_32/Nhr2By0AKpvy5YtD8x0Qy63SdnfGOluyCbqiapqhDBICJXaG3CwsiaCK5EbPmDTFapANkljPp1T2xicBCnGJCS9bw/0", "id": 3}],
     directions: "Turn right on Nanjing Xi Lu",
     address: "345 Nanjing Xi Lu",
-    name: "Jingan Park"
+    name: "Jingan Park",
+    marker: [{
+      iconPath: "../../images/marker.png",
+      latitude: 23.099994,
+      longitude: 113.324520,
+      width: 30,
+      height: 30
+    }]
   },
-  onLoad: function() {
+  onLoad: function(res) {
+    console.log('This is the res from last page', res)
+    const id = res.id
+    wx.request({
+      url: `http://localhost:3000/events/${id}`,
+      success: res => {console.log(res)},
+      fail: res => console.log(res)
+    })
     this.setData({
       dateObject: this.showDate(this.data.date)
     })

@@ -1,16 +1,15 @@
 {
   "pages":[
-    "pages/event/event",
     "pages/events/events",
+    "pages/event/event",
     "pages/profile/profile"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "FitFam",
     "navigationBarTextStyle":"black"
   },
-
 
   "tabBar": {
     "backgroundColor": "#BFBFBF",
@@ -25,7 +24,7 @@
         "text": "Workouts"
       },
       {
-        "pagePath": "pages/event/event",
+        "pagePath": "pages/about/about",
         "iconPath": "images/people.png",
         "selectedIconPath": "images/people.png",
         "text": "About"
