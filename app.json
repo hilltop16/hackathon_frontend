@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/events/events",
-    "pages/event/event"
+    "pages/event/event",
+    "pages/events/events"
   ],
   "window":{
     "backgroundTextStyle":"light",

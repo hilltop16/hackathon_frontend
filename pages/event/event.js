@@ -1,50 +1,33 @@
 var app = getApp();
 Page({
-  data: {
-    motto: 'Hello World',
-    userInfo: {},
-    latitude: null,
-    longitude: null
+  data: {    
+    id: 8,
+    location_id: 1,
+    workout_type: "swimming",
+    is_cancelled: false,
+    announcement: null,
+    aqi: null,
+    max_attendance: 20,
+    date: "2017-09-25T13:45:17.338Z",
+    created_at: "2017-09-23T14:28:44.738Z",
+    updated_at: "2017-09-23T14:28:44.738Z",
+    wechat_user_id: 3,
+    latitude: "31.230012338244954",
+    longitude: "121.4589166639099",
+    photo: "www.thotmail.com",
+    members: [{"photo": "http://wx.qlogo.cn/mmopen/vi_32/Nhr2By0AKpvy5YtD8x0Qy63SdnfGOluyCbqiapqhDBICJXaG3CwsiaCK5EbPmDTFapANkljPp1T2xicBCnGJCS9bw/0", "id": 1}, {"photo": "http://wx.qlogo.cn/mmopen/vi_32/Nhr2By0AKpvy5YtD8x0Qy63SdnfGOluyCbqiapqhDBICJXaG3CwsiaCK5EbPmDTFapANkljPp1T2xicBCnGJCS9bw/0", "id": 2}, {"photo": "http://wx.qlogo.cn/mmopen/vi_32/Nhr2By0AKpvy5YtD8x0Qy63SdnfGOluyCbqiapqhDBICJXaG3CwsiaCK5EbPmDTFapANkljPp1T2xicBCnGJCS9bw/0", "id": 3}],
+    directions: "some long string",
+    address: "345 Nanjing xi Lu",
+    name: "Jingan Park"
   },
   onLoad: function() {
-    this.getLocation();
-    console.log(this.data.latitude)
-    console.log("on loading")
-  },
-  getLocation: function() {
-    console.log("getting my location")
-    var that = this;
-    wx.getLocation({
-      type: "gcj02",
-      success: function(res) {
-        console.log(res)
-        that.setData({
-          latitude: res.latitude,
-          longitude: res.longitude
-        })
-      }
-    })
-  },
-  sendLocation: function() {
-    wx.request({
-      url: "",
-      method: 'POST',
-      data: {
-        latitude: this.data.latitude,
-        longitude: this.data.longitude
-      },
-      success: function (res) {
-        this.setData({
-          events: res.events,
-          is_leader: res.is_leader
-        })
-      }
-    })
   },
   onShow: function() {
-    console.log("loading onShow")
-    console.log(this.data.latitude)
+  },
+  navProfile: function() {
+    wx.navigateTo({
+      url: '/pages/events/events'
+    })
   }
-
 })
   

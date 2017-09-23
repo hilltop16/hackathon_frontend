@@ -1,10 +1,28 @@
-<view>
-  <button bindtap='getLocation'>get my location</button>
-  <button bindtap='sendLocation'>send my location</button>
-  <view>
-    <text>Lat: {{latitude}}</text>
+<view class="header">
+  <!-- <image class="avatar" src="leader"></image> -->
+  <text class="title">{{name}}</text>
+</view>
+
+<view class="container">
+  <text>{{members.length}}/{{max_attendance}} members register</text>
+
+  <view class="avatar-container">
+    <block wx:for="{{members}}" wx:for-item="element" wx:key="index">
+      <image class="avatar" src="{{element.photo}}" bindtap="navProfile" id="{{element.id}}"></image>
+    </block>
   </view>
-  <view>
-    <text>Long: {{longitude}}</text>
+
+  <view class="button-holder">
+    <button>Register</button>
   </view>
+
+  <view>
+  <text>Info</text>
+  </view>
+
+
+
+
+
+
 </view>

@@ -1,1 +1,35 @@
-/* pages/event/event.wxss */
+.container {
+  padding: 10px;
+}
+.container text {
+  font-size: 15px;
+  font-weight: lighter;
+}
+.header {
+  height: 40px;
+  padding: 10px;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: black 1px solid;
+  margin: 5px;
+  margin-top: 20px;
+}
+.title {
+  font-size: 22px;
+  font-weight: lighter;
+}
+.button-holder {
+  padding: 20px;
+  width: 150px;
+}
+.button-holder button {
+  font-size: 15px;
+}
