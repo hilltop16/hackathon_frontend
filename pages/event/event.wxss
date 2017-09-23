@@ -43,3 +43,42 @@
   margin-bottom: 10px;
   font-weight: bold;
 }
+
+map {
+  padding: 50rpx;
+  width: 100vw;
+  height: 250rpx;
+}
+
+.alert-card {
+  width: 94vw;
+  margin: 0 3vw;
+  background: linear-gradient(to bottom left, #2EB872 ,#A3DE83);
+  border-radius: 10rpx;
+  box-shadow: 5rpx 5rpx 7rpx rgba(0,0,0, 0.3);
+  text-align: center;
+  color: white;
+  padding: 36rpx 0;
+}
+
+.cancelled-card {
+  width: 94vw;
+  margin: 0 3vw;
+  background: linear-gradient(to bottom left, #C42348 ,#FF5D6E);
+  border-radius: 10rpx;
+  box-shadow: 5rpx 5rpx 7rpx rgba(0,0,0, 0.3);
+  text-align: center;
+  color: white;
+  padding: 36rpx 0;
+}
+
+.card-title {
+  text-shadow:1rpx 1rpx #333;
+  text-align:center;
+  font-size:50rpx;
+  text-transform: capitalize;
+}
+
+.card-desc {
+  padding: 0 30rpx;
+}

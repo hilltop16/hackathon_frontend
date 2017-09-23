@@ -1,6 +1,6 @@
 <!--index.wxml-->
 
-<view class="card">
+<view class="card" bindtap="viewEvent" id="{{'1'}}">
 <image mode="aspectFill" src="/images/bund.jpeg" class="card-image"></image>
 <view class="overlay"></view>
   <view class="card-category">Jingan</view>

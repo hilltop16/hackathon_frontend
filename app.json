@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/event/event",
     "pages/events/events",
+    "pages/event/event",
     "pages/profile/profile"
   ],
   "window":{
@@ -25,7 +25,7 @@
         "text": "Workouts"
       },
       {
-        "pagePath": "pages/event/event",
+        "pagePath": "pages/about/about",
         "iconPath": "images/people.png",
         "selectedIconPath": "images/people.png",
         "text": "About"

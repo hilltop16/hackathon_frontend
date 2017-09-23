@@ -9,9 +9,11 @@ Page({
     longitude: ''
   },
   //事件处理函数
-  bindViewTap: function() {
+  viewEvent: function(res) {
+    console.log('Id of event', res.currentTarget.id)
+    const id = res.currentTarget.id
     wx.navigateTo({
-      url: '../logs/logs'
+      url: `../event/event?id=${id}`
     })
   },
   onLoad: function () {
