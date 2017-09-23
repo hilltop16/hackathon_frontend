@@ -7,4 +7,10 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
+  <view>
+    <button></button>
+  </view>
+  <view>
+    <button bindtap='getLocation' type='primary'>location</button>
+  </view>
 </view>

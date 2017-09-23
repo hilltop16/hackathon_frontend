@@ -22,5 +22,10 @@ Page({
         userInfo:userInfo
       })
     })
+  },
+  getLocation: function () {
+    wx.navigateTo({
+      url: './location/location'
+    })
   }
 })
