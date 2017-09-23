@@ -1,7 +1,8 @@
 var app = getApp();
 Page({
-  data: {    
-    id: 8,
+  data: {
+    eventId: 8,
+    openId: null,
     location_id: 1,
     workout_type: "swimming",
     is_cancelled: false,
@@ -38,12 +39,31 @@ Page({
     this.setData({
       dateObject: this.showDate(this.data.date)
     })
+
+    that.setData({
+      dateObject: that.showDate(that.data.date)
+    })
+
   },
   onShow: function() {
   },
   navProfile: function() {
     wx.navigateTo({
       url: '/pages/events/events'
+    })
+  },
+
+  handleRegisterBtn: function() {
+    wx.request({
+      url: "https://fitfam-backend.herokuapp.com/events/",
+      method: 'GET',
+      data: {
+        id: this.data.eventId,
+        user_id: this.data.openId,
+      },
+      success: function (res) {
+        console.log(res)
+      }
     })
   },
   showDate: function (date) {
@@ -55,5 +75,6 @@ Page({
       minutes: new Date(date).getMinutes(),
     }
   }
+
+
 })
-  

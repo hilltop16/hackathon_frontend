@@ -13,7 +13,7 @@
   </view>
 
   <view class="button-holder">
-    <button>Register</button>
+    <button bindtap="handleRegisterBtn">Register</button>
   </view>
 
   <view class="info-container">
