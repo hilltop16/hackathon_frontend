@@ -29,7 +29,7 @@ Page({
     }]
   },
   onLoad: function(res) {
-    console.log('This is the res from last page', res)
+    console.log('This is the res from last page', res.id)
     const id = res.id
     wx.request({
       url: `http://localhost:3000/events/${id}`,
@@ -40,9 +40,7 @@ Page({
       dateObject: this.showDate(this.data.date)
     })
 
-    that.setData({
-      dateObject: that.showDate(that.data.date)
-    })
+
 
   },
   onShow: function() {

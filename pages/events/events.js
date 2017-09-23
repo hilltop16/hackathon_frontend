@@ -74,7 +74,7 @@ Page({
     var that = this
     wx.request({
       url: "https://fitfam-backend.herokuapp.com/api/v1/events",
-      method: 'POST',
+      method: 'GET',
       data: {
         open_id: that.data.openid,
         nickname: that.data.nickName,

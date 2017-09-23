@@ -24,7 +24,7 @@
         "text": "Workouts"
       },
       {
-        "pagePath": "pages/about/about",
+        "pagePath": "pages/event/event",
         "iconPath": "images/people.png",
         "selectedIconPath": "images/people.png",
         "text": "About"
@@ -38,5 +38,3 @@
     ]
   }
 }
-
-
