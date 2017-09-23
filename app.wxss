@@ -16,6 +16,9 @@
     position: absolute;
     z-index: 500;
     top: 0;
-    width: 100%;
-    background-color: #FAFAFA;
+    width: 100vw;
+}
+
+page {
+  font-family: 'Avenir', sans-serif
 }
