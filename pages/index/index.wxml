@@ -9,9 +9,28 @@
     <image class="icon" src="/images/people.png"> </image>
     <text> 25 committed </text>
   </view>
+
+  <view class="leader">
     <image class="card-user" src="/images/leader.jpeg"> </image>
   </view>
-<view>
+
+  <view>
+    <button bindtap="showLocation" type="primary">Jingan</button>
+    <button>Luwan</button>
+    <button>Xuhui</button>
+  </view>
+  <view>
+    <button bindtap='getLocation' type='primary'>location</button>
+  </view>
+</view>
+
+<view class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+  <view class="card-category">Popular</view>
+  <view class="card-description">
+    <text>Le Wagon Shanghai</text>
+    <p>Very cool city, the best</p>
+  </view>
+  <image class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"></image>
   <a class="card-link" href="#" ></a>
 </view>
 
