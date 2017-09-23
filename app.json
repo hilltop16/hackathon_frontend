@@ -20,7 +20,7 @@
       {
         "pagePath": "pages/events/events",
         "iconPath": "images/workout.png",
-        "selectedIconPath": "images/people.png",
+        "selectedIconPath": "images/workout_blue.png",
         "text": "Workouts"
       },
       {
