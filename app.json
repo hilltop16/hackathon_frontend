@@ -1,9 +1,7 @@
 {
   "pages":[
-    "pages/index/index",
-    "pages/logs/logs",
-    "pages/index/location/location",
-    "pages/index/Jingan/location"
+    "pages/events/events",
+    "pages/event/event"
   ],
   "window":{
     "backgroundTextStyle":"light",

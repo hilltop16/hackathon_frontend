@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('/images/bund.jpeg');">
+  <view class="card-category">Jingan</view>
+  <view class="card-description">
+    <image class="icon" src="/images/distance.png"> </image>
+    <text> 1.5 km </text>
+  </view>
+  <view class="attendees">
+    <image class="icon" src="/images/people.png"> </image>
+    <text> 25 committed </text>
+  </view>
+
+  <view class="leader">
+    <image class="card-user" src="/images/leader.jpeg"> </image>
+  </view>
+</view>
