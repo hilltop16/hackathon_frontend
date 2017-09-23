@@ -1,9 +1,35 @@
-<view>
-  <image class="userinfo-avatar" src="{{avatar}}" background-size="cover"></image>
-  <ul>
-    <li>Name: {{name}}</li>
-    <li>Age: </li>
-    
-  </ul>
-  
-</view>
+<view class="card">
+    <!-- Header -->
+    <view class="card-header">
+      <view class="card-header__avatar">
+        <image src="{{user.avatar}}"></image>
+      </view><a class="card-header__follow">
+              Status: Leader
+      </a>
+    </view>
+    <!-- Content-->
+    <view class="card-content">
+      <view class="card-content__username">{{user.nickName ? user.nickName : 'Nathan'}}</view>
+      <view class="card-content__bio">
+        <!-- Add these later -->
+        Name:
+        Age:
+        Last Time active:
+        Preferred location
+      </view>
+    </view>
+    <view class="btn-area">
+    </view>
+    <!-- Footer-->
+    <view class="card-footer">
+      <view class="card-footer__pens"> <span>3</span>
+        <view class="label">Events Attended</view>
+      </view>
+      <view class="card-footer__followers"> <span>2 days ago</span>
+        <view class="label">Last active</view>
+      </view>
+      <view class="card-footer__following"> <span>Jingan Park</span>
+        <view class="label">Preferred Location</view>
+      </view>
+    </view>
+  </view>
