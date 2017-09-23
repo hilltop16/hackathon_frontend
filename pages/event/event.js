@@ -1,6 +1,6 @@
 var app = getApp();
 Page({
-  data: {    
+  data: {
     eventId: 8,
     openId: null,
     location_id: 1,
@@ -17,11 +17,12 @@ Page({
     longitude: "121.4589166639099",
     photo: "www.thotmail.com",
     members: [{"photo": "http://wx.qlogo.cn/mmopen/vi_32/Nhr2By0AKpvy5YtD8x0Qy63SdnfGOluyCbqiapqhDBICJXaG3CwsiaCK5EbPmDTFapANkljPp1T2xicBCnGJCS9bw/0", "id": 1}, {"photo": "http://wx.qlogo.cn/mmopen/vi_32/Nhr2By0AKpvy5YtD8x0Qy63SdnfGOluyCbqiapqhDBICJXaG3CwsiaCK5EbPmDTFapANkljPp1T2xicBCnGJCS9bw/0", "id": 2}, {"photo": "http://wx.qlogo.cn/mmopen/vi_32/Nhr2By0AKpvy5YtD8x0Qy63SdnfGOluyCbqiapqhDBICJXaG3CwsiaCK5EbPmDTFapANkljPp1T2xicBCnGJCS9bw/0", "id": 3}],
-    directions: "some long string",
-    address: "345 Nanjing xi Lu",
+    directions: "Turn right on Nanjing Xi Lu",
+    address: "345 Nanjing Xi Lu",
     name: "Jingan Park"
   },
   onLoad: function() {
+
     var that = this;
     wx.login({
       success: function (res) {
@@ -38,6 +39,11 @@ Page({
         })
       }
     })
+
+    that.setData({
+      dateObject: that.showDate(that.data.date)
+    })
+
   },
   onShow: function() {
   },
@@ -46,6 +52,7 @@ Page({
       url: '/pages/events/events'
     })
   },
+
   handleRegisterBtn: function() {
     wx.request({
       url: "https://fitfam-backend.herokuapp.com/events/",
@@ -58,6 +65,16 @@ Page({
         console.log(res)
       }
     })
+  },
+  showDate: function (date) {
+    return {
+      day: new Date(date).getDate(),
+      month: new Date(date).getMonth(),
+      year: new Date(date).getFullYear(),
+      hour: new Date(date).getHours(),
+      minutes: new Date(date).getMinutes(),
+    }
   }
-})
+
   
+})

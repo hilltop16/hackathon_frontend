@@ -33,3 +33,13 @@
 .button-holder button {
   font-size: 15px;
 }
+.info-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.card-title {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
