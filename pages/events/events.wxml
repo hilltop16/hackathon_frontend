@@ -1,5 +1,8 @@
 <!--index.wxml-->
-<view class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('/images/bund.jpeg');">
+
+<view class="card">
+<image mode="aspectFill" src="/images/bund.jpeg" class="card-image"></image>
+<view class="overlay"></view>
   <view class="card-category">Jingan</view>
   <view class="card-description">
     <image class="icon" src="/images/distance.png"> </image>
