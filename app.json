@@ -8,5 +8,35 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"black"
+  },
+
+
+  "tabBar": {
+    "backgroundColor": "#BFBFBF",
+    "borderStyle": "#D3D3D3",
+    "selectedColor": "#1414EF",
+    "color": "#131313",
+    "list": [
+      {
+        "pagePath": "pages/events/events",
+        "iconPath": "images/workout.png",
+        "selectedIconPath": "images/people.png",
+        "text": "Workouts"
+      },
+      {
+        "pagePath": "pages/event/event",
+        "iconPath": "images/people.png",
+        "selectedIconPath": "images/people.png",
+        "text": "About"
+      },
+      {
+        "pagePath": "pages/event/event",
+        "iconPath": "images/people.png",
+        "selectedIconPath": "images/people.png",
+        "text": "Profile"
+      }
+    ]
   }
 }
+
+
