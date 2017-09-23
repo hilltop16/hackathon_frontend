@@ -16,8 +16,14 @@
     <button>Register</button>
   </view>
 
-  <view>
-  <text>Info</text>
+  <view class="info-container">
+  <text class="card-title">Info</text>
+  <text>Workout Type: {{workout_type}}</text>
+  <text>Directions: {{directions}}</text>
+  <text>Address: {{address}}</text>
+  <text>AQI: {{aqi}}</text>
+  <text>Date: {{dateObject.day}}/{{dateObject.month}}/{{dateObject.year}}</text>
+  <text>Time: {{dateObject.hour}}:{{dateObject.minutes}}</text>
   </view>
 
 
