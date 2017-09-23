@@ -1,0 +1,9 @@
+<view>
+  <image class="userinfo-avatar" src="{{avatar}}" background-size="cover"></image>
+  <ul>
+    <li>Name: {{name}}</li>
+    <li>Age: </li>
+    
+  </ul>
+  
+</view>
