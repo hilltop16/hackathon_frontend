@@ -1,3 +1,9 @@
 <view>
   <button bindtap='getLocation'>get my location</button>
+  <view>
+    <text>Lat: {{latitude}}</text>
+  </view>
+  <view>
+    <text>Long: {{longitude}}</text>
+  </view>
 </view>

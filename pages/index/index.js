@@ -4,7 +4,9 @@ var app = getApp()
 Page({
   data: {
     motto: 'Hello World',
-    userInfo: {}
+    userInfo: {},
+    latitude: '',
+    longitude: ''
   },
   //事件处理函数
   bindViewTap: function() {
@@ -22,10 +24,16 @@ Page({
         userInfo:userInfo
       })
     })
+
   },
   getLocation: function () {
     wx.navigateTo({
       url: './location/location'
+    })
+  },
+  showLocation: function() {
+    wx.navigateTo({
+      url: './Jingan/location'
     })
   }
 })

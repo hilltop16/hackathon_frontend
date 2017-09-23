@@ -3,26 +3,31 @@ Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
-    location: {}
+    latitude: null,
+    longitude: null
   },
   onLoad: function() {
-    this.getLocation()
+    this.getLocation();
+    console.log(this.data.latitude)
+    console.log("on loading")
   },
   getLocation: function() {
-    console.log("getting my locatibon")
+    console.log("getting my location")
+    var that = this;
     wx.getLocation({
       type: "gcj02",
       success: function(res) {
         console.log(res)
-        wx.openLocation({
+        that.setData({
           latitude: res.latitude,
-          longitude: res.longitude,
-          fail: function(err) {
-            console.log(err)
-          }
+          longitude: res.longitude
         })
       }
     })
+  },
+  onReady: function() {
+    console.log(this.data.latitude)
   }
+
 })
   

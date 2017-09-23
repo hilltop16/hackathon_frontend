@@ -2,7 +2,8 @@
   "pages":[
     "pages/index/index",
     "pages/logs/logs",
-    "pages/index/location/location"
+    "pages/index/location/location",
+    "pages/index/Jingan/location"
   ],
   "window":{
     "backgroundTextStyle":"light",
