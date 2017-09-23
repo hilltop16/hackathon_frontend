@@ -1,15 +1,16 @@
 /**index.wxss**/
 .card {
-  height: 100px;
+  margin-top: 50rpx;
+  height: 260rpx;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: white;
   position: relative;
-  margin-bottom: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
-  border-radius: 5px;
+  margin-bottom: 40rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  border-radius: 10rpx;
 }
 
 .card-image {
