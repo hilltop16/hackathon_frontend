@@ -11,7 +11,8 @@ Page({
   },
   onLoad: function() {
     var userInfo = app.globalData.userInfo;
-    console.log(userInfo.gender);
+    console.log('onload')
+    console.log('this is the user info', userInfo);
     this.setData({
       avatar: userInfo.avatarUrl
     })

@@ -1,7 +1,8 @@
 {
   "pages":[
     "pages/event/event",
-    "pages/events/events"
+    "pages/events/events",
+    "pages/profile/profile"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -30,7 +31,7 @@
         "text": "About"
       },
       {
-        "pagePath": "pages/event/event",
+        "pagePath": "pages/profile/profile",
         "iconPath": "images/people.png",
         "selectedIconPath": "images/people.png",
         "text": "Profile"
