@@ -1,5 +1,6 @@
 <view>
   <button bindtap='getLocation'>get my location</button>
+  <button bindtap='sendLocation'>send my location</button>
   <view>
     <text>Lat: {{latitude}}</text>
   </view>
