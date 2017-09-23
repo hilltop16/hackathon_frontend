@@ -5,4 +5,4 @@
   <text>{{placeData.title}}</text>
   <text>{{placeData.address}}</text>
   <text>{{placeData.telephone}}</text>
-</view>
+</view> 

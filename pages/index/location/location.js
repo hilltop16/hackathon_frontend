@@ -25,7 +25,24 @@ Page({
       }
     })
   },
-  onReady: function() {
+  sendLocation: function() {
+    wx.request({
+      url: "",
+      method: 'POST',
+      data: {
+        latitude: this.data.latitude,
+        longitude: this.data.longitude
+      },
+      success: function (res) {
+        this.setData({
+          events: res.events,
+          is_leader: res.is_leader
+        })
+      }
+    })
+  },
+  onShow: function() {
+    console.log("loading onShow")
     console.log(this.data.latitude)
   }
 
