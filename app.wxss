@@ -8,3 +8,14 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
+
+.tabBar {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    position: absolute;
+    z-index: 500;
+    top: 0;
+    width: 100%;
+    background-color: #FAFAFA;
+}
