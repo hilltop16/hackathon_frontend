@@ -45,7 +45,7 @@
 }
 
 map {
-  padding: 50rpx;
+  margin: 50rpx 0;
   width: 100vw;
   height: 250rpx;
 }
@@ -53,6 +53,7 @@ map {
 .alert-card {
   width: 94vw;
   margin: 0 3vw;
+  margin-bottom: 20rpx;
   background: linear-gradient(to bottom left, #2EB872 ,#A3DE83);
   border-radius: 10rpx;
   box-shadow: 5rpx 5rpx 7rpx rgba(0,0,0, 0.3);
@@ -64,6 +65,7 @@ map {
 .cancelled-card {
   width: 94vw;
   margin: 0 3vw;
+  margin-bottom: 20rpx;
   background: linear-gradient(to bottom left, #C42348 ,#FF5D6E);
   border-radius: 10rpx;
   box-shadow: 5rpx 5rpx 7rpx rgba(0,0,0, 0.3);

@@ -7,10 +7,9 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "FitFam",
     "navigationBarTextStyle":"black"
   },
-
 
   "tabBar": {
     "backgroundColor": "#BFBFBF",
