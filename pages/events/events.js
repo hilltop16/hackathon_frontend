@@ -13,9 +13,9 @@ Page({
     events: '',
     truncateDistance: ''
   },
-  viewEvent: function(res) {
-    console.log('Id of event', res.currentTarget.id)
-    let id = res.currentTarget.id
+  viewEvent: function(e) {
+    console.log('Id of event', e.currentTarget.id)
+    let id = e.currentTarget.id
     wx.navigateTo({
       url: `../event/event?id=${id}`
     })
@@ -97,10 +97,7 @@ Page({
       fail: err => { console.log(err) }
     })
   },
-  truncateDistances: function(array){
-    return number
-  },
   onShow: function(){
-    console.log('this is show')
+    console.log('this is onshow')
   }
 })
