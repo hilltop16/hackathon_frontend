@@ -11,11 +11,10 @@
     <view class="card-content">
       <view class="card-content__username">{{user.nickName ? user.nickName : 'Nathan'}}</view>
       <view class="card-content__bio">
-        <!-- Add these later -->
-        Name:
+        <br> Wechat name: {{name}} </br>
         Age:
-        Last Time active:
-        Preferred location
+        Last Time active: {{lastActive}}
+        Preferred location: {{preferLocation}}
       </view>
     </view>
     <view class="btn-area">
@@ -26,9 +25,9 @@
         <view class="label">Events Attended</view>
       </view>
       <view class="card-footer__followers"> <span>2 days ago</span>
-        <view class="label">Last active</view>
+        <view class="label">Last active: {{lastActive}}</view>
       </view>
-      <view class="card-footer__following"> <span>Jingan Park</span>
+      <view class="card-footer__following"> <span> {{preferLocation}} </span>
         <view class="label">Preferred Location</view>
       </view>
     </view>

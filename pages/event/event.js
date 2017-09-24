@@ -16,7 +16,8 @@ Page({
     latitude: "31.230012338244954",
     longitude: "121.4589166639099",
     photo: "www.thotmail.com",
-    members: [{"photo": "http://wx.qlogo.cn/mmopen/vi_32/Nhr2By0AKpvy5YtD8x0Qy63SdnfGOluyCbqiapqhDBICJXaG3CwsiaCK5EbPmDTFapANkljPp1T2xicBCnGJCS9bw/0", "id": 1}, {"photo": "http://wx.qlogo.cn/mmopen/vi_32/Nhr2By0AKpvy5YtD8x0Qy63SdnfGOluyCbqiapqhDBICJXaG3CwsiaCK5EbPmDTFapANkljPp1T2xicBCnGJCS9bw/0", "id": 2}, {"photo": "http://wx.qlogo.cn/mmopen/vi_32/Nhr2By0AKpvy5YtD8x0Qy63SdnfGOluyCbqiapqhDBICJXaG3CwsiaCK5EbPmDTFapANkljPp1T2xicBCnGJCS9bw/0", "id": 3}],
+    members: [],
+    id: null,
     directions: "Line 2 - Jingan Temple Station",
     address: "345 Nanjing Xi Lu",
     name: "Jingan Park",
@@ -30,33 +31,37 @@ Page({
     is_leader: null,
     wechat_user_id: null
   },
-  onLoad: function(res) {
-    console.log('This is the res from last page', res)
-    const id = res.id
-    wx.request({
-      url: `http://localhost:3000/events/${id}`,
-      success: res => {console.log(res)},
-      fail: res => console.log(res)
-    })
-    this.setData({
+
+  onLoad: function(options) {
+    console.log('This is the res from last page', options.id)
+    let that = this
+    let id = options.id
+    that.setData({
+      id: options.id,
       dateObject: this.showDate(this.data.date)
     })
-
-
-
+    wx.request({
+      url: `https://fitfam-backend.herokuapp.com/api/v1/events/${id}`,
+      success: res => {
+        let event = res.data
+        that.setData(event)
+      },
+      fail: res => {console.log(res)}
+    })
   },
   onShow: function() {
   },
-  navProfile: function() {
+  navProfile: function(e) {
+    let id = e.target.id
     wx.navigateTo({
-      url: '../profile/profile'
+      url: `/pages/profile/profile?id=${id}`
     })
   },
 
   handleRegisterBtn: function() {
     wx.request({
-      url: "https://fitfam-backend.herokuapp.com/events/",
-      method: 'GET',
+      url: "https://fitfam-backend.herokuapp.com/api/v1/bookings/",
+      method: 'POST',
       data: {
         id: this.data.eventId,
         user_id: this.data.openId

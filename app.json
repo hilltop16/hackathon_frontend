@@ -23,7 +23,7 @@
         "text": "Workouts"
       },
       {
-        "pagePath": "pages/event/event",
+        "pagePath": "pages/events/events",
         "iconPath": "images/starWhite.png",
         "selectedIconPath": "images/starRed.png",
         "text": "Favorite"

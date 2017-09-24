@@ -1,10 +1,11 @@
 //index.js
+const preloader = require('../../libs/loader.js')
+
 //获取应用实例
 var app = getApp()
 Page({
   data: {
-    motto: 'Hello World',
-
+    loader: true,
     latitude: '',
     longitude: '',
     openid: '',
@@ -13,9 +14,9 @@ Page({
     events: '',
     truncateDistance: ''
   },
-  viewEvent: function(res) {
-    console.log('Id of event', res.currentTarget.id)
-    let id = res.currentTarget.id
+  viewEvent: function(e) {
+    console.log('Id of event', e.currentTarget.id)
+    let id = e.currentTarget.id
     wx.navigateTo({
       url: `../event/event?id=${id}`
     })
@@ -73,7 +74,7 @@ Page({
   },
   getFitfamData: function(){
     console.log('starting get fitfam data')
-    var that = this
+    const that = this
     wx.request({
       url: "https://fitfam-backend.herokuapp.com/api/v1/events",
       method: 'GET',
@@ -85,6 +86,8 @@ Page({
         longitude: that.data.longitude
       },
       success: res => {
+        console.log(res)
+        preloader.hide(that)
         let parsedResponse = res.data
         that.setData({
           events: parsedResponse.events
@@ -97,10 +100,7 @@ Page({
       fail: err => { console.log(err) }
     })
   },
-  truncateDistances: function(array){
-    return number
-  },
   onShow: function(){
-    console.log('this is show')
+    console.log('this is onshow')
   }
 })
