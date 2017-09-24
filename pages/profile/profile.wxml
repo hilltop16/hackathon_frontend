@@ -2,19 +2,18 @@
     <!-- Header -->
     <view class="card-header">
       <view class="card-header__avatar">
-        <image src="{{user.avatar}}"></image>
+        <image src="{{avatarUrl}}"></image>
       </view><a class="card-header__follow">
-              Status: Leader
+              Status: {{status}}
       </a>
     </view>
     <!-- Content-->
     <view class="card-content">
-      <view class="card-content__username">{{user.nickName ? user.nickName : 'Nathan'}}</view>
+      <view class="card-content__username">{{name ? name : 'Nathan'}}</view>
       <view class="card-content__bio">
-        <br> Wechat name: {{name}} </br>
-        Age:
-        Last Time active: {{lastActive}}
-        Preferred location: {{preferLocation}}
+        <text class="info-text">Age: 28  </text>
+        <text class="info-text">Last Time active: {{lastActive}}</text>
+        <text class="info-text">Preferred location: {{preferLocation}}</text>
       </view>
     </view>
     <view class="btn-area">
