@@ -1,6 +1,8 @@
 <view class="header">
-  <!-- <image class="avatar" src="leader"></image> -->
-  <text class="title">{{name}}</text>
+  <image mode="aspectFill" src="/images/bund.jpeg" class="card-image"></image>
+  <view class="overlay"></view>
+  <image class="avatar" src="/images/bund.jpeg"></image>
+  <text class="title">asdasdasd{{name}}</text>
 </view>
 
 <view class="container">
@@ -12,7 +14,7 @@
     </block>
   </view>
   
-  <view wx:if="{{3 > 5}}">
+  <view wx:if="{{8 > 5}}">
     <view class="button-holder">
       <button bindtap="handleRegisterBtn">Register</button>
     </view>
@@ -27,20 +29,20 @@
     <view class="info-card-title">Info</view>
     <view class="info-card-desc">
       <view class="info-card-desc-titles">
-        <text>Workout Type:</text>
-        <text>Directions:</text>
-        <text>Address:</text>
-        <text>AQI:</text>
-        <text>Date:</text>
-        <text>Time:</text>
+        <text class="info-text strong">Workout:</text>
+        <text class="info-text strong">Directions:</text>
+        <text class="info-text strong">Address:</text>
+        <text class="info-text strong">AQI:</text>
+        <text class="info-text strong">Date:</text>
+        <text class="info-text strong">Time:</text>
       </view>
       <view class="info-card-desc-desc">
-        <text>{{workout_type}}</text>
-        <text>{{directions}}</text>
-        <text>{{address}}</text>
-        <text>{{aqi}}</text>
-        <text>{{dateObject.day}}/{{dateObject.month}}/{{dateObject.year}}</text>
-        <text>{{dateObject.hour}}:{{dateObject.minutes}}</text>
+        <text class="info-text">{{workout_type}}</text>
+        <text class="info-text">{{directions}}</text>
+        <text class="info-text">{{address}}</text>
+        <text class="info-text">{{aqi}}</text>
+        <text class="info-text">{{dateObject.day}}/{{dateObject.month}}/{{dateObject.year}}</text>
+        <text class="info-text">{{dateObject.hour}}:{{dateObject.minutes}}</text>
       </view>
     </view>
   </view>
