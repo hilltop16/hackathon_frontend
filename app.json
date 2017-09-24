@@ -12,27 +12,27 @@
   },
 
   "tabBar": {
-    "backgroundColor": "#BFBFBF",
+    "backgroundColor": "#85E87D",
     "borderStyle": "#D3D3D3",
-    "selectedColor": "#1414EF",
-    "color": "#131313",
+    "selectedColor": "#FF395E",
+    "color": "#FBFFE9",
     "list": [
       {
         "pagePath": "pages/events/events",
-        "iconPath": "images/workout.png",
-        "selectedIconPath": "images/workout_blue.png",
+        "iconPath": "images/workoutWhite.png",
+        "selectedIconPath": "images/workoutRed.png",
         "text": "Workouts"
       },
       {
         "pagePath": "pages/event/event",
-        "iconPath": "images/people.png",
-        "selectedIconPath": "images/people.png",
-        "text": "About"
+        "iconPath": "images/starWhite.png",
+        "selectedIconPath": "images/starRed.png",
+        "text": "Favorite"
       },
       {
         "pagePath": "pages/profile/profile",
-        "iconPath": "images/people.png",
-        "selectedIconPath": "images/people.png",
+        "iconPath": "images/profileWhite2.png",
+        "selectedIconPath": "images/profileRed2.png",
         "text": "Profile"
       }
     ]
