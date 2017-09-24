@@ -57,7 +57,7 @@ Page({
       method: 'GET',
       data: {
         id: this.data.eventId,
-        user_id: this.data.openId,
+        user_id: this.data.openId
       },
       success: function (res) {
         console.log(res)
