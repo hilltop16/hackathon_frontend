@@ -1,16 +1,42 @@
 var app = getApp();
 Page({
   data: {
-    id: null,
+    eventId: 8,
+    openId: null,
+    location_id: 1,
+    workout_type: "swimming",
+    is_cancelled: false,
+    announcement: null,
+    aqi: null,
+    max_attendance: 20,
+    date: "2017-09-25T13:45:17.338Z",
+    created_at: "2017-09-23T14:28:44.738Z",
+    updated_at: "2017-09-23T14:28:44.738Z",
+    wechat_user_id: 3,
+    latitude: "31.230012338244954",
+    longitude: "121.4589166639099",
+    photo: "www.thotmail.com",
     members: [],
-    address: null,
-    openId: null
+    id: null,
+    directions: "Line 2 - Jingan Temple Station",
+    address: "345 Nanjing Xi Lu",
+    name: "Jingan Park",
+    marker: [{
+      iconPath: "../../images/marker.png",
+      latitude: 23.099994,
+      longitude: 113.324520,
+      width: 30,
+      height: 30
+    }],
+    is_leader: null,
+    wechat_user_id: null
   },
+
   onLoad: function(options) {
     console.log('This is the res from last page', options.id)
     let that = this
     let id = options.id
-    this.setData({
+    that.setData({
       id: options.id,
       dateObject: this.showDate(this.data.date)
     })
@@ -45,7 +71,7 @@ Page({
       method: 'POST',
       data: {
         id: this.data.eventId,
-        user_id: this.data.openId,
+        user_id: this.data.openId
       },
       success: function (res) {
         console.log(res)
