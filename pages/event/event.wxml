@@ -16,15 +16,28 @@
     <button bindtap="handleRegisterBtn">Register</button>
   </view>
 
-  <view class="info-container">
-    <text class="card-title">Info</text>
-    <text>Workout Type: {{workout_type}}</text>
-    <text>Directions: {{directions}}</text>
-    <text>Address: {{address}}</text>
-    <text>AQI: {{aqi}}</text>
-    <text>Date: {{dateObject.day}}/{{dateObject.month}}/{{dateObject.year}}</text>
-    <text>Time: {{dateObject.hour}}:{{dateObject.minutes}}</text>
+  <view class="info-card">
+    <view class="info-card-title">Info</view>
+    <view class="info-card-desc">
+      <view class="info-card-desc-titles">
+        <text>Workout Type:</text>
+        <text>Directions:</text>
+        <text>Address:</text>
+        <text>AQI:</text>
+        <text>Date:</text>
+        <text>Time:</text>
+      </view>
+      <view class="info-card-desc-desc">
+        <text>{{workout_type}}</text>
+        <text>{{directions}}</text>
+        <text>{{address}}</text>
+        <text>{{aqi}}</text>
+        <text>{{dateObject.day}}/{{dateObject.month}}/{{dateObject.year}}</text>
+        <text>{{dateObject.hour}}:{{dateObject.minutes}}</text>
+      </view>
+    </view>
   </view>
+
   <map id="map" longitude="{{marker[0].longitude}}" latitude="{{marker[0].latitude}}" scale="14" markers="{{marker}}" bindmarkertap="markertap" show-location></map>
   <view class="{{is_cancelled ? 'cancelled-card' : 'alert-card'}}">
     <view class="card-title">Announcement</view>
