@@ -33,7 +33,6 @@ Page({
   },
 
   onLoad: function(options) {
-    console.log('This is the res from last page', options.id)
     let that = this
     let id = options.id
     that.setData({
@@ -44,7 +43,30 @@ Page({
       url: `https://fitfam-backend.herokuapp.com/api/v1/events/${id}`,
       success: res => {
         let event = res.data
-        that.setData(event)
+        that.setData({
+          dateObject: this.showDate(event.date),
+          openId: event.wechat_user_id,
+          max_attendance: event.max_attendance,
+          markers: [{
+            iconPath: "../../images/marker.png",
+            width: 30,
+            height: 30,
+            latitude: event.latitude,
+            longitude: event.longitude
+          }],
+          latitude: event.latitude,
+          longitude: event.longitude,
+          workout_type: event.workout_type,
+          photo: event.photo,
+          directions: event.directions,
+          location_id: event.location_id,
+          is_cancelled: event.is_cancelled,
+          address: event.address,
+          aqi: event.aqi,
+          announcement: event.announcement,
+          members: event.members,
+          location_name: event.location_name
+        })
       },
       fail: res => {console.log(res)}
     })
@@ -58,7 +80,6 @@ Page({
       url: `/pages/profile/profile?id=${id}`
     })
   },
-
   handleCheckinBtn: function() {
     wx.navigateTo({
       url: '/pages/checkin/checkin'
@@ -85,7 +106,7 @@ Page({
       month: new Date(date).getMonth(),
       year: new Date(date).getFullYear(),
       hour: new Date(date).getHours(),
-      minutes: new Date(date).getMinutes(),
+      minutes: new Date(date).getMinutes()
     }
   }
 })

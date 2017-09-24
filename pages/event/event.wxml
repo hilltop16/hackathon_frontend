@@ -1,15 +1,28 @@
 <view class="header">
-  <!-- <image class="avatar" src="leader"></image> -->
-  <text class="title">{{name}}</text>
+  <image mode="aspectFill" src="{{photo}}" class="card-image"></image>
+  <view class="overlay"></view>
+  <image class="avatar" src="/images/bund.jpeg"></image>
+  <text class="title">{{location_name}}</text>
 </view>
 
 <view class="container">
-  <text>{{members.length}}/{{max_attendance}} members register</text>
+  <text>{{members.length}}/{{max_attendance}} members registered</text>
 
+  <view class="avatar-container">
+    <block wx:for="{{members}}" wx:for-item="element" wx:key="index">
+      <image class="avatar" src="{{element.photo}}" bindtap="navProfile" id="{{element.id}}"></image>
+    </block>
+  </view>
 
-
-  <view class="button-holder">
-    <button bindtap="handleRegisterBtn">Register</button>
+  <view wx:if="{{8 > 5}}">
+    <view class="button-holder">
+      <button bindtap="handleRegisterBtn">Register</button>
+    </view>
+  </view>
+  <view wx:else>
+    <view class="button-holder">
+      <button bindtap="handleCheckinBtn">Check in</button>
+    </view>
   </view>
 
   <view class="info-card">
@@ -34,11 +47,11 @@
     </view>
   </view>
 
-  <map id="map" longitude="{{marker[0].longitude}}" latitude="{{marker[0].latitude}}" scale="14" markers="{{marker}}" bindmarkertap="markertap" show-location></map>
+  <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" markers="{{markers}}" bindmarkertap="markertap" show-location></map>
   <view class="{{is_cancelled ? 'cancelled-card' : 'alert-card'}}">
     <view class="card-title">Announcement</view>
     <view class="card-desc">
-      {{announcement}}
+      {{is_cancelled ? 'The event is cancelled :(' : announcement}}
     </view>
   </view>
 </view>
