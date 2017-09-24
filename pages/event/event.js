@@ -31,11 +31,11 @@ Page({
   onLoad: function(res) {
     console.log('This is the res from last page', res.id)
     const id = res.id
-    wx.request({
-      url: `http://localhost:3000/events/${id}`,
-      success: res => {console.log(res)},
-      fail: res => console.log(res)
-    })
+    // wx.request({
+    //   url: `/events/${id}`,
+    //   success: res => {console.log(res)},
+    //   fail: res => console.log(res)
+    // })
     this.setData({
       dateObject: this.showDate(this.data.date)
     })
