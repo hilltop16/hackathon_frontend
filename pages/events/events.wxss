@@ -30,12 +30,12 @@
   justify-content: space-around;
   flex-direction: column;
   position: absolute;
-  top:12px;
+  top:90rpx;
 }
 
 .header-text {
-  color: #FF395E;
-  font-size:  25px;
+  color: #A3DE82;
+  font-size:  60rpx;
   font-weight: lighter;
 }
 
