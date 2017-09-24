@@ -47,7 +47,7 @@ Page({
   },
   navProfile: function() {
     wx.navigateTo({
-      url: '/pages/events/events'
+      url: '../profile/profile'
     })
   },
 
