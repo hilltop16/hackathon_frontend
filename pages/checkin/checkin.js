@@ -1,19 +1,28 @@
 // pages/checkin/checkin.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    event_id: '',
+    user_id: '',
+    checked_in: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    console.log('starting get fitfam data')
+    var that = this
+    wx.request({
+      url: `https://fitfam-backend.herokuapp.com/api/v1/event/8/bookings`,
+      method: 'GET',
+      data: {
+        event_id: that.data.event_id,
+        user_id: that.data.user_id,
+        checked_in: that.data.checked_in,
+      },
+    }),
   },
+ 
 
   /**
    * 生命周期函数--监听页面初次渲染完成
