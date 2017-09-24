@@ -49,9 +49,14 @@ Page({
           leader_id: event.wechat_user_id,
           is_registered: event.is_registered
         })
-        if(this.leader_id == App.remote_user_info.wechat_user_id){
-          this.setData({
+        if(that.data.leader_id == App.remote_user_info.wechat_user_id){
+          that.setData({
             is_leader: true
+          })
+        }
+        if(that.data.is_registered){
+          that.setData({
+            booking_id: event.booking_id
           })
         }
       },
@@ -95,12 +100,8 @@ Page({
     let booking_id = this.data.booking_id
     let that = this
     wx.request({
-      url:`https://fitfam-backend.herokuapp.com/api/v1/bookings/${id}`,
+      url:`https://fitfam-backend.herokuapp.com/api/v1/bookings/${booking_id}`,
       method: 'DELETE',
-      data: {
-        event_id: this.data.id,
-        wechat_user_id: user_id
-      },
       success: function(res){
         that.setData({
           is_registered: false,
