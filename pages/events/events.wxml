@@ -1,19 +1,28 @@
 <!--index.wxml-->
-
-<view class="card" bindtap="viewEvent" id="{{'1'}}">
-<image mode="aspectFill" src="/images/bund.jpeg" class="card-image"></image>
-<view class="overlay"></view>
-  <view class="card-category">Jingan</view>
-  <view class="card-description">
-    <image class="icon" src="/images/distance.png"> </image>
-    <text> 1.5 km </text>
-  </view>
-  <view class="attendees">
-    <image class="icon" src="/images/people.png"> </image>
-    <text> 25 committed </text>
-  </view>
-
-  <view class="leader">
-    <image class="card-user" src="/images/leader.jpeg"> </image>
+<view class="header" >
+  <image mode="aspectFill" src="/images/header.jpg" class="card-image"> </image>
+  <view class="header-content">
+    <text class="header-text">Fitness Community</text>
   </view>
 </view>
+<!-- <text id="loading">LOADING</text> -->
+<block wx:for="{{ events }}" wx:for-item="event" wx:key="index">
+  <view class="card" bindtap="viewEvent" id="{{event.id}}">
+  <image mode="aspectFill" src="/images/bund.jpeg" class="card-image"></image>
+  <view class="overlay"></view>
+    <view class="card-category">{{event.location_name}}</view>
+    <view class="card-description">
+      <image class="icon" src="/images/distance.png"> </image>
+      <text> {{event.distance}} </text>
+    </view>
+    <view class="attendees">
+      <image class="icon" src="/images/people.png"> </image>
+      <text> {{event.participants}} </text>
+    </view>
+    <view class="leader">
+      <image class="card-user" src="{{event.leader_photo_url}}"> </image>
+    </view>
+  </view>
+
+</block>
+
