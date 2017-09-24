@@ -1,4 +1,6 @@
 const app = getApp();
+var util = require('../../utils/util.js')
+
 Page({
   data:{
     avatarUrl: null,
@@ -7,7 +9,8 @@ Page({
     status: null,
     memberSince: null,
     lastActive: null,
-    preferLocation: null
+    preferLocation: null,
+    lastActiveFromToday: null
   },
 
   onLoad: function() {
@@ -21,14 +24,17 @@ Page({
       method: 'GET',
       success: res => {
         console.log("request success", res);
+    
         this.setData({
           memberSince: res.data.created_at.slice(0, 10),
           lastActive: res.data.updated_at.slice(0, 10),
+          lastActiveFromToday: util.timeSince(new Date(res.data.updated_at)),
           preferLocation: res.data.preferred_location
         })
         console.log("setData", this.data)
       },
-      fail: err => console.log(err)
+      fail: err => {
+        console.log(err)}
     })
     this.statusCheck()
   },
