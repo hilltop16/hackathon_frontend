@@ -89,7 +89,7 @@ Page({
         that.setData({
           events: parsedResponse.events
         })
-        window.user_info = {
+        App.remote_user_info = {
           is_leader: res.data.is_leader,
           wechat_user_id: res.data.wechat_user_id
         }
