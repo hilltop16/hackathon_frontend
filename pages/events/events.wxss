@@ -11,6 +11,7 @@
   margin-left: 20rpx;
   margin-right: 20rpx;
   border-radius: 10rpx;
+  animation: fadein 1s;
 }
 
 .header {
@@ -113,4 +114,26 @@
 }
 .card-link:hover {
   opacity: 0.1;
+}
+
+.preloader {
+  height: 150rpx;
+  width: 150rpx;
+  display: flex;
+  position: relative;
+  top: 50%;
+  z-index: 3;
+  margin: 0 auto;
+}
+
+.preloader-wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
