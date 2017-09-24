@@ -1,48 +1,35 @@
 <view class="header">
-  <image mode="aspectFill" src="/images/bund.jpeg" class="card-image"></image>
-  <view class="overlay"></view>
-  <image class="avatar" src="/images/bund.jpeg"></image>
-  <text class="title">asdasdasd{{name}}</text>
+  <!-- <image class="avatar" src="leader"></image> -->
+  <text class="title">{{name}}</text>
 </view>
 
 <view class="container">
   <text>{{members.length}}/{{max_attendance}} members register</text>
 
-  <view class="avatar-container">
-    <block wx:for="{{members}}" wx:for-item="element" wx:key="index">
-      <image class="avatar" src="{{element.photo}}" bindtap="navProfile" id="{{element.id}}"></image>
-    </block>
-  </view>
-  
-  <view wx:if="{{8 > 5}}">
-    <view class="button-holder">
-      <button bindtap="handleRegisterBtn">Register</button>
-    </view>
-  </view>
-  <view wx:else>
-    <view class="button-holder">
-      <button bindtap="handleCheckinBtn">Check in</button>
-    </view>
+
+
+  <view class="button-holder">
+    <button bindtap="handleRegisterBtn">Register</button>
   </view>
 
   <view class="info-card">
     <view class="info-card-title">Info</view>
     <view class="info-card-desc">
       <view class="info-card-desc-titles">
-        <text class="info-text strong">Workout:</text>
-        <text class="info-text strong">Directions:</text>
-        <text class="info-text strong">Address:</text>
-        <text class="info-text strong">AQI:</text>
-        <text class="info-text strong">Date:</text>
-        <text class="info-text strong">Time:</text>
+        <text>Workout Type:</text>
+        <text>Directions:</text>
+        <text>Address:</text>
+        <text>AQI:</text>
+        <text>Date:</text>
+        <text>Time:</text>
       </view>
       <view class="info-card-desc-desc">
-        <text class="info-text">{{workout_type}}</text>
-        <text class="info-text">{{directions}}</text>
-        <text class="info-text">{{address}}</text>
-        <text class="info-text">{{aqi}}</text>
-        <text class="info-text">{{dateObject.day}}/{{dateObject.month}}/{{dateObject.year}}</text>
-        <text class="info-text">{{dateObject.hour}}:{{dateObject.minutes}}</text>
+        <text>{{workout_type}}</text>
+        <text>{{directions}}</text>
+        <text>{{address}}</text>
+        <text>{{aqi}}</text>
+        <text>{{dateObject.day}}/{{dateObject.month}}/{{dateObject.year}}</text>
+        <text>{{dateObject.hour}}:{{dateObject.minutes}}</text>
       </view>
     </view>
   </view>

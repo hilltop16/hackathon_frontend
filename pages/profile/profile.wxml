@@ -7,9 +7,19 @@
               Status: {{status}}
       </a>
     </view>
+    <!-- Info Bar  -->
+    <view class="card-footer">
+      <view class="card-footer__pens"> <span>3</span>
+        <view class="label">Events Attended</view>
+      </view>
+      <view class="card-footer__followers"> <span> {{ lastActiveFromToday }}  ago</span>
+        <view class="label">Last active </view>
+      </view>
+    </view>
+
     <!-- Content-->
     <view class="card-content">
-      <view class="card-content__username">{{name ? name : 'Nathan'}}</view>
+      <view class="card-content__username">{{name ? name : 'Wechat User'}}</view>
       <view class="card-content__bio">
         <text class="info-text">Age: 28  </text>
         <text class="info-text">Last Time active: {{lastActive}}</text>
@@ -19,15 +29,5 @@
     <view class="btn-area">
     </view>
     <!-- Footer-->
-    <view class="card-footer">
-      <view class="card-footer__pens"> <span>3</span>
-        <view class="label">Events Attended</view>
-      </view>
-      <view class="card-footer__followers"> <span>2 days ago</span>
-        <view class="label">Last active: {{lastActive}}</view>
-      </view>
-      <view class="card-footer__following"> <span> {{preferLocation}} </span>
-        <view class="label">Preferred Location</view>
-      </view>
-    </view>
+    
   </view>
