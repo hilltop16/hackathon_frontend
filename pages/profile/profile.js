@@ -30,6 +30,13 @@ Page({
       },
       fail: err => console.log(err)
     })
+    this.statusCheck()
+  },
+  statusCheck: function() {
+    var status = App.remote_user_info.is_leader ? 'Leader' : 'Member'
+    this.setData({
+      status: status
+    })
   }
 
   //   console.log("loading onload")

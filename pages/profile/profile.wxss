@@ -84,6 +84,11 @@ label:before {
 .card-content__bio {
   color: #666666;
   font-size: 12px;
+  display: flex;
+  flex-direction: column;
+}
+.info-text {
+  margin-bottom: 20rpx;
 }
 .card-footer {
   display: -webkit-box;
