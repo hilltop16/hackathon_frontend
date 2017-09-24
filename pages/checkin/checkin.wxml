@@ -1,0 +1,6 @@
+<!--pages/checkin/checkin.wxml-->
+<view class="container">
+    <block wx:for="{{members}}" wx:for-item="element" wx:key="index">
+      <image class="avatar" src="{{element.photo}}" bindtap="navProfile" id="{{element.id}}"></image>
+    </block>
+  </view>

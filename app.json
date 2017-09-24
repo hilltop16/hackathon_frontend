@@ -2,7 +2,8 @@
   "pages":[
     "pages/events/events",
     "pages/event/event",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/checkin/checkin"
   ],
   "window":{
     "backgroundTextStyle":"light",

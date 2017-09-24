@@ -11,9 +11,16 @@
       <image class="avatar" src="{{element.photo}}" bindtap="navProfile" id="{{element.id}}"></image>
     </block>
   </view>
-
-  <view class="button-holder">
-    <button bindtap="handleRegisterBtn">Register</button>
+  
+  <view wx:if="{{3 > 5}}">
+    <view class="button-holder">
+      <button bindtap="handleRegisterBtn">Register</button>
+    </view>
+  </view>
+  <view wx:else>
+    <view class="button-holder">
+      <button bindtap="handleCheckinBtn">Check in</button>
+    </view>
   </view>
 
   <view class="info-card">

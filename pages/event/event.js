@@ -25,6 +25,7 @@ Page({
   },
   onShow: function() {
   },
+
   navProfile: function(e) {
     let id = e.target.id
     wx.navigateTo({
@@ -32,7 +33,13 @@ Page({
     })
   },
 
-  handleRegisterBtn: function() {
+  handleCheckinBtn: function() {
+    wx.navigateTo({
+      url: '/pages/checkin/checkin'
+    })
+  },
+
+  handleRegisterBtn: function () {
     wx.request({
       url: "https://fitfam-backend.herokuapp.com/api/v1/bookings/",
       method: 'POST',
@@ -45,6 +52,7 @@ Page({
       }
     })
   },
+
   showDate: function (date) {
     return {
       day: new Date(date).getDate(),
@@ -54,6 +62,4 @@ Page({
       minutes: new Date(date).getMinutes(),
     }
   }
-
-
 })
