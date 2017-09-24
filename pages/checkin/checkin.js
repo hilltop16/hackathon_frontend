@@ -20,7 +20,7 @@ Page({
         user_id: that.data.user_id,
         checked_in: that.data.checked_in,
       },
-    }),
+    })
   },
  
 

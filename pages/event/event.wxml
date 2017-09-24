@@ -51,7 +51,7 @@
   <view class="{{is_cancelled ? 'cancelled-card' : 'alert-card'}}">
     <view class="card-title">Announcement</view>
     <view class="card-desc">
-      {{is_cancelled ? 'The event is cancelled due to weather' : 'Fitfam t-shirts have arrived!  You can pick your shirt up at the workout today.'}}
+      {{announcement}}
     </view>
   </view>
 </view>
