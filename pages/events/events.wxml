@@ -1,7 +1,16 @@
 <!--index.wxml-->
+<view class="header" >
+  <image mode="aspectFill" src="/images/location5.jpg" class="card-image"> </image>
+   <view class="header-content">
+      <text class="header-text" > Fitness </text>
+      <text class="header-text"> Commmunity through fitness </text>
+   </view>
+   <image class="avatar" src="leader"></image>
+  <text class="title">{{name}}</text>
+</view>
 
 <view class="card" bindtap="viewEvent" id="{{'1'}}">
-<image mode="aspectFill" src="/images/bund.jpeg" class="card-image"></image>
+  <image mode="aspectFill" src="/images/bund.jpeg" class="card-image"></image>
 <view class="overlay"></view>
   <view class="card-category">Jingan</view>
   <view class="card-description">
