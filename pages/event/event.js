@@ -1,35 +1,11 @@
 var app = getApp();
 Page({
   data: {
-    eventId: 8,
-    openId: null,
-    location_id: 1,
-    workout_type: "swimming",
-    is_cancelled: false,
-    announcement: null,
-    aqi: null,
-    max_attendance: 20,
-    date: "2017-09-25T13:45:17.338Z",
-    created_at: "2017-09-23T14:28:44.738Z",
-    updated_at: "2017-09-23T14:28:44.738Z",
-    wechat_user_id: 3,
-    latitude: "31.230012338244954",
-    longitude: "121.4589166639099",
-    photo: "www.thotmail.com",
-    members: [],
     id: null,
-    directions: "Line 2 - Jingan Temple Station",
-    address: "345 Nanjing Xi Lu",
-    name: "Jingan Park",
-    marker: [{
-      iconPath: "../../images/marker.png",
-      latitude: 23.099994,
-      longitude: 113.324520,
-      width: 30,
-      height: 30
-    }],
-    is_leader: null,
-    wechat_user_id: null
+    is_event_leader: false,
+    is_registered: false,
+    is_checked_in: false,
+    booking_id: null
   },
 
   onLoad: function(options) {
@@ -41,6 +17,9 @@ Page({
     })
     wx.request({
       url: `https://fitfam-backend.herokuapp.com/api/v1/events/${id}`,
+      data:{
+        wechat_user_id: App.remote_user_info.wechat_user_id
+      },
       success: res => {
         let event = res.data
         that.setData({
@@ -65,8 +44,15 @@ Page({
           aqi: event.aqi,
           announcement: event.announcement,
           members: event.members,
-          location_name: event.location_name
+          location_name: event.location_name,
+          leader_id: event.wechat_user_id,
+          is_registered: event.is_registered
         })
+        if(this.leader_id == App.remote_user_info.wechat_user_id){
+          this.setData({
+            is_leader: true
+          })
+        }
       },
       fail: res => {console.log(res)}
     })
@@ -85,21 +71,44 @@ Page({
       url: '/pages/checkin/checkin'
     })
   },
-
   handleRegisterBtn: function () {
+    let user_id = App.remote_user_info.wechat_user_id
+    let that = this
     wx.request({
       url: "https://fitfam-backend.herokuapp.com/api/v1/bookings/",
       method: 'POST',
       data: {
-        id: this.data.eventId,
-        wechat_user_id: this.data.openId,
+        event_id: this.data.id,
+        wechat_user_id: user_id
       },
       success: function (res) {
-        console.log(res)
-      }
+        that.setData({
+          is_registered: true,
+          booking_id: res.data.id
+        })
+      },
+      fail: err => {console.log(err)}
     })
   },
-
+  handleCancel: function(){
+    let booking_id = this.data.booking_id
+    let that = this
+    wx.request({
+      url:`https://fitfam-backend.herokuapp.com/api/v1/bookings/${id}`,
+      method: 'DELETE',
+      data: {
+        event_id: this.data.id,
+        wechat_user_id: user_id
+      },
+      success: function(res){
+        that.setData({
+          is_registered: false,
+          booking_id: null
+        })
+      },
+      fail: err =>{ console.log(err) }
+    })
+  },
   showDate: function (date) {
     return {
       day: new Date(date).getDate(),

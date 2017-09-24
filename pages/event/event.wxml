@@ -14,16 +14,24 @@
     </block>
   </view>
 
-  <view wx:if="{{8 > 5}}">
+  <view wx:if="{{!is_leader && !is_registed}}">
     <view class="button-holder">
       <button bindtap="handleRegisterBtn">Register</button>
     </view>
   </view>
-  <view wx:else>
+  <view wx:elif="{{!is_leader && is_registered}}">
     <view class="button-holder">
-      <button bindtap="handleCheckinBtn">Check in</button>
+      <text>You're registered for this event already!</text>
+      <button bindtap="handleCancel">Cancel</button>
     </view>
   </view>
+  <view wx:elif="{{is_leader}}">
+    <view class="button-holder">
+      <text>You're registered!</text>
+      <button bindtap="handleCheckinBtn">Cancel</button>
+    </view>
+  </view>
+
 
   <view class="info-card">
     <view class="info-card-title">Info</view>
