@@ -92,7 +92,7 @@ Page({
       method: 'POST',
       data: {
         id: this.data.eventId,
-        user_id: this.data.openId
+        wechat_user_id: this.data.openId,
       },
       success: function (res) {
         console.log(res)

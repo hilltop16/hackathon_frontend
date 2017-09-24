@@ -1,5 +1,5 @@
 <view class="header">
-  <image mode="aspectFill" src="{{photo}}" class="card-image"></image>
+<image mode="aspectFill" src="{{photo}}" class="card-image"></image>
   <view class="overlay"></view>
   <image class="avatar" src="/images/bund.jpeg"></image>
   <text class="title">{{location_name}}</text>
