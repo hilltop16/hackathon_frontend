@@ -60,7 +60,6 @@ Page({
     wx.getLocation({
       type: "gcj02",
       success: function (res) {
-        console.log(res)
         that.setData({
           latitude: res.latitude,
           longitude: res.longitude
@@ -86,17 +85,22 @@ Page({
         longitude: that.data.longitude
       },
       success: res => {
-        console.log(res)
         let parsedResponse = res.data
         that.setData({
-          events: parsedResponse.events,
-          is_leader: parsedResponse.is_leader
+          events: parsedResponse.events
         })
+        window.user_info = {
+          is_leader: res.data.is_leader,
+          wechat_user_id: res.data.wechat_user_id
+        }
       },
-      fail: res => { debugger }
+      fail: err => { console.log(err) }
     })
   },
-  truncateDistance: function(number){
+  truncateDistances: function(array){
     return number
+  },
+  onShow: function(){
+    console.log('this is show')
   }
 })

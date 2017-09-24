@@ -5,16 +5,15 @@
     <text class="header-text">Fitness Community</text>
   </view>
 </view>
-
+<!-- <text id="loading">LOADING</text> -->
 <block wx:for="{{ events }}" wx:for-item="event" wx:key="index">
-
   <view class="card" bindtap="viewEvent" id="{{event.id}}">
   <image mode="aspectFill" src="/images/bund.jpeg" class="card-image"></image>
   <view class="overlay"></view>
     <view class="card-category">{{event.location_name}}</view>
     <view class="card-description">
       <image class="icon" src="/images/distance.png"> </image>
-      <text> {{truncateDistance(event.distance)}} </text>
+      <text> {{event.distance}} </text>
     </view>
     <view class="attendees">
       <image class="icon" src="/images/people.png"> </image>
