@@ -40,6 +40,7 @@ Page({
           directions: event.directions,
           location_id: event.location_id,
           is_cancelled: event.is_cancelled,
+          is_registered: event.is_registered,
           address: event.address,
           aqi: event.aqi,
           announcement: event.announcement,

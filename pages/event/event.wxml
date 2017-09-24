@@ -14,7 +14,7 @@
     </block>
   </view>
 
-  <view wx:if="{{!is_leader && !is_registed}}">
+  <view wx:if="{{!is_leader && !is_registered}}">
     <view class="button-holder">
       <button bindtap="handleRegisterBtn">Register</button>
     </view>
