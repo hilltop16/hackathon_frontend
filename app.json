@@ -24,12 +24,6 @@
         "text": "Workouts"
       },
       {
-        "pagePath": "pages/events/events",
-        "iconPath": "images/starWhite.png",
-        "selectedIconPath": "images/starRed.png",
-        "text": "Favorite"
-      },
-      {
         "pagePath": "pages/profile/profile",
         "iconPath": "images/profileWhite2.png",
         "selectedIconPath": "images/profileRed2.png",

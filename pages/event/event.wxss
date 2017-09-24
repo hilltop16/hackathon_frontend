@@ -14,13 +14,19 @@
   margin-bottom: 20px;
   position: relative;
 }
+.avatar-container {
+  width: 100%;
+  margin-top: 10px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 .avatar {
   width: 30px;
   height: 30px;
   border-radius: 50%;
   border: black 1px solid;
-  position: absolute;
-  right: 20px;
 }
 .title {
   font-size: 20px;
