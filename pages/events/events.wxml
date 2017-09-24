@@ -1,4 +1,9 @@
 <!--index.wxml-->
+
+<view wx:if="{{loader}}" class="preloader-wrapper">
+  <image class="preloader" src="../../images/preloader.gif"/>
+</view>
+
 <view class="header" >
   <image mode="aspectFill" src="/images/header.jpg" class="card-image"> </image>
   <view class="header-content">

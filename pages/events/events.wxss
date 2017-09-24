@@ -11,6 +11,8 @@
   margin-left: 20rpx;
   margin-right: 20rpx;
   border-radius: 10rpx;
+  animation: slide-in 0.5s forwards;
+  -webkit-transform: translateX(-100%); 
 }
 
 .header {
@@ -114,3 +116,29 @@
 .card-link:hover {
   opacity: 0.1;
 }
+
+.preloader {
+  height: 150rpx;
+  width: 150rpx;
+  display: flex;
+  position: relative;
+  top: 50%;
+  z-index: 3;
+  margin: 0 auto;
+}
+
+.preloader-wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
+
+@keyframes slide-in {
+    100% { transform: translateX(0%); }
+}
+
+@-webkit-keyframes slide-in {
+    100% { -webkit-transform: translateX(0%); }
+}
+   
