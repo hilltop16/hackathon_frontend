@@ -1,22 +1,26 @@
 var app = getApp();
 Page({
   data: {
-    eventId: null,
+    id: null,
     members: [],
     address: null,
     openId: null
   },
   onLoad: function(options) {
     console.log('This is the res from last page', options.id)
+    let that = this
     let id = options.id
+    this.setData({
+      id: options.id,
+      dateObject: this.showDate(this.data.date)
+    })
     wx.request({
       url: `https://fitfam-backend.herokuapp.com/api/v1/events/${id}`,
-      success: res => {console.log(res)},
+      success: res => {
+        let event = res.data
+        that.setData(event)
+      },
       fail: res => {console.log(res)}
-    })
-    this.setData({
-      eventId: options.id,
-      dateObject: this.showDate(this.data.date)
     })
   },
   onShow: function() {
@@ -30,8 +34,8 @@ Page({
 
   handleRegisterBtn: function() {
     wx.request({
-      url: "https://fitfam-backend.herokuapp.com/events/",
-      method: 'GET',
+      url: "https://fitfam-backend.herokuapp.com/api/v1/bookings/",
+      method: 'POST',
       data: {
         id: this.data.eventId,
         user_id: this.data.openId,
