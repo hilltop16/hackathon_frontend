@@ -45,13 +45,20 @@ Page({
   },
   onShow: function() {
   },
+  
   navProfile: function() {
     wx.navigateTo({
       url: '/pages/events/events'
     })
   },
 
-  handleRegisterBtn: function() {
+  handleCheckinBtn: function() {
+    wx.navigateTo({
+      url: '/pages/checkin/checkin'
+    })
+  },
+
+  handleRegisterBtn: function () {
     wx.request({
       url: "https://fitfam-backend.herokuapp.com/events/",
       method: 'GET',
@@ -64,6 +71,7 @@ Page({
       }
     })
   },
+
   showDate: function (date) {
     return {
       day: new Date(date).getDate(),
@@ -73,6 +81,4 @@ Page({
       minutes: new Date(date).getMinutes(),
     }
   }
-
-
 })
