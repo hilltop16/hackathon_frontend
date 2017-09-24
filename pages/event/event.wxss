@@ -20,13 +20,19 @@
   height: 50px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 .avatar {
   width: 30px;
   height: 30px;
+  margin: 0 5px;
   border-radius: 50%;
   border: black 1px solid;
+}
+
+.header .avatar{
+  right: 30rpx;
+  position: absolute;
 }
 .title {
   font-size: 20px;
