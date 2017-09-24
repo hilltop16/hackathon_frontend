@@ -60,7 +60,7 @@ label:before {
 }
 .card-content {
   text-align: center;
-  height: 25vh;
+  height: 27vh;
   margin-top:9vh;
 }
 .card-content__username {
