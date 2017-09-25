@@ -20,8 +20,8 @@
     </view>
   </view>
   <view wx:elif="{{!is_leader && is_registered}}">
+    <text class="registered-sign">You're registered for this event already!</text>
     <view class="button-holder">
-      <text>You're registered for this event already!</text>
       <button bindtap="handleCancel">Cancel</button>
     </view>
   </view>

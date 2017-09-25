@@ -16,7 +16,7 @@
 }
 .avatar-container {
   width: 100%;
-  margin-top: 10px;
+  margin: 10px 0px;
   height: 50px;
   display: flex;
   align-items: center;
@@ -44,9 +44,13 @@
 .button-holder {
   padding: 20px;
   width: 150px;
+  margin: 0 auto;
 }
 .button-holder button {
   font-size: 15px;
+}
+.registered-sign {
+  margin-top: 20px;
 }
 .card-title {
   margin-bottom: 10px;
