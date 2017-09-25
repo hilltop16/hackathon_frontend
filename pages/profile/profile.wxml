@@ -21,7 +21,7 @@
     <view class="card-content">
       <view class="card-content__username">{{name ? name : 'Wechat User'}}</view>
       <view class="card-content__bio">
-        <text class="info-text">Age: 28  </text>
+        <text class="info-text">Age: 33  </text>
         <text class="info-text">Last Time active: {{lastActive}}</text>
         <text class="info-text">Preferred location: {{preferLocation}}</text>
       </view>
